@@ -5,9 +5,9 @@ local meteors = {}
 -- meteoriten hinzufügen
 
 function addMeteor()
-	local y = math.random(0, 786 - image:getHeight())
-	local speed = math.random(3, 5)
 	local size = math.random(50, 128)
+	local y = math.random(0, 786 - size)
+	local speed = math.random(3, 5)
 
 	local meteor = {
 		x = 1024,
@@ -53,7 +53,7 @@ end
 function love.draw()
 	for _, meteor in ipairs(meteors) do
 		local factor = meteor.size / image:getWidth()
-		love.graphics.draw(image, meteor.x, meteor.y, factor, factor)
+		love.graphics.draw(image, meteor.x, meteor.y, 0, factor)
 	end
 end
 
