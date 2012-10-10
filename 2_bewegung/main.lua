@@ -3,8 +3,7 @@
 local x = 100
 local y = 100
 
-local move_x = 0
-local move_y = 0
+local speed = 5
 
 -- initialisierung
 
@@ -15,8 +14,21 @@ end
 -- bewegen
 
 function love.update(delta)
-	x = x + move_x
-	y = y + move_y
+	if love.keyboard.isDown('up') then
+		y = y - speed
+	end
+
+	if love.keyboard.isDown('down') then
+		y = y + speed
+	end
+
+	if love.keyboard.isDown('left') then
+		x = x - speed
+	end
+
+	if love.keyboard.isDown('right') then
+		x = x + speed
+	end
 end
 
 -- zeichnen
@@ -28,31 +40,16 @@ end
 -- tastatur eingabe
 
 function love.keypressed(key, unicode)
-	if key == 'up' then
-		move_y = -5
-	end
-
-	if key == 'down' then
-		move_y = 5
-	end
-
-	if key == 'left' then
-		move_x = -5
-	end
-
-	if key == 'right' then
-		move_x = 5
-	end
 end
 
 
 function love.keyreleased(key, unicode)
-	if key == 'up' or key == 'down' then
-		move_y = 0
+	if key == '+' then
+		speed = speed + 1
 	end
 
-	if key == 'left' or key == 'right' then
-		move_x = 0
+	if key == '-' then
+		speed = speed - 1
 	end
 end
 
