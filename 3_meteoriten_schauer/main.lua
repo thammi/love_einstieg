@@ -43,7 +43,6 @@ function love.update(delta)
 	end
 
 	for _, remove in ipairs(remove_list) do
-		print("Removing " .. remove)
 		table.remove(meteors, remove)
 	end
 end
