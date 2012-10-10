@@ -39,10 +39,6 @@ end
 
 -- tastatur eingabe
 
-function love.keypressed(key, unicode)
-end
-
-
 function love.keyreleased(key, unicode)
 	if key == '+' then
 		speed = speed + 1
