@@ -1,4 +1,4 @@
-# Lua Einstieg
+# Lua + Löve Einstieg
 
 Dies ist ein kleiner Einstieg in die Programmierung mit Lua und Löve.
 
