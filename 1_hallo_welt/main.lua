@@ -6,12 +6,13 @@ local y = 100
 -- zeichnen
 
 function love.draw()
+	love.graphics.setColor(0, 255, 255)
 	love.graphics.print("Hallo Welt", x, y)
 end
 
 -- tastatur eingabe
 
-function love.keypressed(key, unicode)
+function love.keypressed(key)
 	if key == 'up' then
 		y = y - 10
 	end
